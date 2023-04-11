@@ -1,0 +1,133 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.Wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: whitesmoke;
+}
+
+.App {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
+.convertor {
+  .currencies {
+    position: relative;
+    display: flex;
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    li {
+      display: inline-flex;
+      padding: 10px 20px;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      justify-content: center;
+      flex: 1;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      &:active {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      &.active {
+        background-color: rgb(70, 120, 200);
+        color: #fff;
+      }
+
+      &:last-of-type {
+        display: inline-flex;
+        align-items: center;
+        flex: 0 0 50px;
+        border-right: 0;
+
+        svg {
+          width: 16px;
+          height: 16px;
+        }
+      }
+    }
+  }
+  .popup {
+    list-style: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: block;
+    background-color: white;
+    position: absolute;
+    right: 0px;
+    top: 110%;
+    max-height: 400px;
+    overflow-y: scroll;
+    z-index: 1000;
+
+    li {
+      display: block;
+    }
+  }
+  input {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 2.4rem;
+    font-weight: bold;
+    padding: 20px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    width: 100%;
+  }
+}
+
+.arrows-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  .leftArrow {
+    transform: rotate(-90deg);
+    width: 70px;
+    height: 40px;
+  }
+  .rightArrow {
+    transform: rotate(90deg);
+    width: 70px;
+    height: 40px;
+  }
+
+  @media (max-width: 800px) {
+    transform: rotate(90deg);
+    align-items: center;
+    margin: auto;
+  }
+}
